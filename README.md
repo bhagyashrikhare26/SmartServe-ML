@@ -1,91 +1,113 @@
+# 🍽️ SmartServe ML
+### Smart College Canteen Food Demand Predictor
 
-# SmartServe-ML
-## Smart College Canteen Food Demand Predictor
+[![Live App](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://smartserve-ml-mseblvvjgz5xfgsdecn6gv.streamlit.app)
+[![Python](https://img.shields.io/badge/Python-ML%20Project-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 
-SmartServe-ML is a Machine Learning mini-project
-that predicts food demand using historical order
-data, meal information, pricing and promotions.
+**SmartServe ML** is a machine learning mini-project that predicts food order demand using historical food-demand data. It helps explore how demand forecasting could support better canteen planning and reduce avoidable food waste.
 
-## Problem Statement
+🔗 **[Try the Live Application](https://smartserve-ml-mseblvvjgz5xfgsdecn6gv.streamlit.app)**  
+💻 **[GitHub Repository](https://github.com/bhagyashrikhare26/SmartServe-ML)**
 
-Predicting food demand can help canteen operators
-plan food preparation and inventory more effectively,
-potentially reducing food wastage.
+## 🎯 Problem Statement
 
-## Dataset
+Canteens need to estimate how many meals customers will order. Underestimating demand can lead to shortages, while overestimating can result in unsold food. SmartServe ML investigates demand forecasting using historical order, price, and promotion information.
 
-Source: Kaggle Food Demand Forecasting
+## ✨ Features
 
-https://www.kaggle.com/competitions/food-demand-forecasting/data
+- **Demand Prediction:** Enter week, canteen/center ID, meal ID, selling price, base price, promotion email status, and homepage-featured status to generate a predicted order count.
+- **Dataset Insights:** Explore dataset previews and visualizations in the interactive dashboard.
+- **Model Comparison:** Compare four regression algorithms and their evaluation results.
+- **Interactive Web UI:** Use the Streamlit dashboard through a browser.
+- **Cloud Deployment:** Access the project through Streamlit Community Cloud.
 
-- Records: 456,548
-- Features: 7
-- Target: num_orders
-- Missing values: 0
+## 🛠️ Technologies
 
-## Machine Learning Algorithms
+| Area | Tools / Libraries |
+| --- | --- |
+| Programming | Python |
+| Machine Learning | scikit-learn |
+| Data handling | pandas, NumPy |
+| Web dashboard | Streamlit |
+| Version control | Git, GitHub |
+| Deployment | Streamlit Community Cloud |
+
+## 📊 Dataset
+
+The project uses a historical food-demand dataset with **456,548 rows and 9 columns**:
+
+`id`, `week`, `center_id`, `meal_id`, `checkout_price`, `base_price`, `emailer_for_promotion`, `homepage_featured`, `num_orders`.
+
+**Prediction target:** `num_orders` (number of orders).
+
+> Note: This is a historical food-demand dataset used for a college canteen demand-prediction use case; it is not claimed to be data collected from an actual college canteen.
+
+## 🧠 Machine Learning Algorithms
+
+Four regression models were evaluated:
 
 1. Linear Regression
 2. Decision Tree Regressor
 3. Random Forest Regressor
-4. K-Nearest Neighbors Regressor
+4. K-Nearest Neighbors (KNN) Regressor
 
-## Model Performance
+### Model Performance
 
-| Algorithm | MAE | RMSE | R2 |
-|---|---:|---:|---:|
+| Algorithm | MAE ↓ | RMSE ↓ | R² Score ↑ |
+| --- | ---: | ---: | ---: |
 | Linear Regression | 149.31 | 260.16 | 0.4925 |
 | Decision Tree | 136.92 | 269.71 | 0.4546 |
 | Random Forest | 131.73 | 249.17 | 0.5345 |
-| KNN | 88.17 | 197.37 | 0.7080 |
+| **KNN Regressor** | **88.17** | **197.37** | **0.7080** |
 
-KNN achieved the best results among the four
-tested models.
+**Best tested model: KNN Regressor**, with the lowest MAE and RMSE and the highest R² among these runs.
 
-## Technologies
+*MAE and RMSE measure prediction error (lower is better). R² measures goodness of fit (higher is better).* These are project experiment results, not guaranteed performance on new data.
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Streamlit
-- Joblib
-- Matplotlib / Plotly (if installed)
+### Demand Prediction
+![Demand Prediction screen](screenshots/demand-prediction.png)
 
-## Features
+### Dataset Insights
+![Dataset Insights screen](screenshots/dataset-insights.png)
 
-- Food demand prediction
-- Dataset visualization
-- Model performance comparison
-- Interactive Streamlit dashboard
+### Model Comparison
+![Model Comparison screen](screenshots/model-comparison.png)
 
-## Installation
+## ⚙️ Run Locally
 
-Create a virtual environment:
+**Prerequisites:** Python and Git installed.
 
+```bash
+git clone https://github.com/bhagyashrikhare26/SmartServe-ML.git
+cd SmartServe-ML
 python -m venv .venv
+```
 
-Activate it on Windows:
+**Windows Command Prompt:**
 
-.venv\Scripts\activate
+```bat
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m streamlit run app.py
+```
 
-Install dependencies:
+Then open the local URL displayed by Streamlit (usually `http://localhost:8501`). The project requires its dataset and model artifacts to be available at the paths expected by `app.py`.
 
-pip install -r requirements.txt
+## 🔄 Project Workflow
 
-## Run Application
+**Historical dataset → Data preprocessing → Model training → Model evaluation → Select best tested model → Streamlit dashboard → Demand prediction**
 
-python -m streamlit run app.py
+## 🚀 Future Scope
 
-## Limitations
+- Integrate real college canteen sales data for institution-specific forecasts.
+- Add calendar, holiday, and event-related predictors.
+- Provide inventory planning recommendations based on forecasted demand.
+- Monitor model accuracy and retrain with new orders.
 
-This is a prototype based on a public
-food-demand dataset, not actual college canteen
-records. Predictions are estimates.
+## 👩‍💻 Developed By
 
-## Future Scope
+**Bhagyashri Vinod Khare**  
+Machine Learning Mini Project
 
-- Collect real college canteen data
-- Add holiday and attendance features
-- Improve model performance
-- Deploy the dashboard online
+---
+
+*SmartServe ML — Predict demand, plan smarter, reduce potential food waste.*
