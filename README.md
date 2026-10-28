@@ -64,14 +64,23 @@ Four regression models were evaluated:
 
 *MAE and RMSE measure prediction error (lower is better). R² measures goodness of fit (higher is better).* These are project experiment results, not guaranteed performance on new data.
 
-### Demand Prediction
-![Demand Prediction screen](screenshots/demand-prediction.png)
+##  Application Screenshots
+## 📸 Application Screenshots
 
-### Dataset Insights
-![Dataset Insights screen](screenshots/dataset-insights.png)
+### 1. Demand Prediction Result
+![Demand Prediction](screenshots/demand-prediction2.png)
 
-### Model Comparison
-![Model Comparison screen](screenshots/model-comparison.png)
+### 2. Dataset Overview
+![Dataset Overview](screenshots/dataset-insights.png)
+
+### 3. Dataset Analysis and Preview
+![Dataset Analysis](screenshots/dataset-insights2.png)
+
+### 4. Model Performance
+![Model Performance](screenshots/model-comparison.png)
+
+### 5. R² Score Comparison
+![Model Comparison Graph](screenshots/model-comparison2.png)
 
 ## ⚙️ Run Locally
 
